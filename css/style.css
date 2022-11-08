@@ -42,6 +42,7 @@ header span{
 }
 
 .box{
+    color:#F8B195;
     width: 100%;
     height: 80vh;
     border-radius: 15px;
@@ -85,6 +86,7 @@ registration{
 }
 
 .input-infos input{
+    font-size: 20px;
     width: 80%;
     height: 8vh;
 }
@@ -186,14 +188,13 @@ products{
 }
 
 .product img{
-
     grid-area: img;
 }
 
 .product p{
+    color: black;
     display: flex;
     font-size: 1rem;
-    align-items: center;
     grid-area: price;
 }
 
@@ -221,7 +222,7 @@ products{
 
 .button-remove button:hover{
     transition: background 0.5s;
-    background-color: #F8B195;
+    background-color: #ad7762;
 }
 
 
