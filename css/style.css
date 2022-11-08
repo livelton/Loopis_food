@@ -123,6 +123,7 @@ registration{
 }
 
 #button-save{
+    cursor: pointer;
     width: 15rem;
     height: 2.5rem;
     background-color: #F54749;
@@ -161,7 +162,35 @@ products{
     display: flex;
     width: 28vw;
     margin-left: 4%;
+    box-shadow: 1px 1px 1px rgb(66, 66, 66);
 }
+
+.product img{
+    margin-top: -10px;
+}
+
+#info-product{
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+}
+
+.button-remove{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+#remove-button{
+    cursor: pointer;
+    color: white;
+    background-color: #F54749;
+    border-radius: 15px;
+    width: 100px;
+    height: 2.5rem;
+}
+
+
 
 
 
