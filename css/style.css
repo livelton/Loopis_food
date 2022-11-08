@@ -25,7 +25,41 @@ header{
 
 .box{
     width: 100%;
-    background-color: red;
     height: 80vh;
 
+}
+
+registration{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+    "title"
+    "input"
+    "input"
+    "promotion"
+    "save";
+}
+
+.title{
+    height: 25%;
+    grid-area: title;
+    background-color: brown;
+}
+.input-infos{
+    height: 30%;
+    grid-area: input;
+    background-color: blue;
+}
+
+.promotion{
+    height: 30%;
+    grid-area: promotion;
+    background-color: green;
+}
+
+.save-button{
+    height: 15%;
+    grid-area: save;
+    background-color: tomato;
 }
