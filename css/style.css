@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body{
+    background-image: url(/imgs/background_food_loopis.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .container{
     width: 100vw;
     display: flex;
@@ -28,6 +34,7 @@ header{
     height: 80vh;
     border-radius: 15px;
     box-shadow: 2px 2px 4px rgb(66, 66, 66);
+    background-color: white;
 }
 
 registration{
@@ -155,4 +162,6 @@ products{
     width: 28vw;
     margin-left: 4%;
 }
+
+
 
