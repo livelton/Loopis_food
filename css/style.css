@@ -32,8 +32,6 @@ header{
 
 registration{
     display: grid;
-    width: 100%;
-    height: 100%;
     grid-template-areas:
     "title"
     "input"
@@ -122,4 +120,39 @@ registration{
     height: 2.5rem;
     background-color: #F54749;
     border-radius: 15px;
+    color:white;
+    font-size: 1rem;
 }
+
+/*PÁGINA DE PRODUTOS*/
+
+products{
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "product"
+    "product"
+    "product"
+    "product"
+    "product"
+    "product";
+}
+
+.product-list{
+    grid-area: product;
+    height: 12,5%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.product{
+    margin-top: 10px;
+    background-color: #F8B195;
+    border-radius: 15px;
+    height: 12vh;
+    display: flex;
+    width: 28vw;
+    margin-left: 4%;
+}
+
