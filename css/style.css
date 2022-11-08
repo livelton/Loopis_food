@@ -1,6 +1,13 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+* {
+    /* tirando margin e padding de toda a página, inicialmente */
     margin: 0;
     padding: 0;
+    font-family: 'Inter';
+    font-style: normal;
+
 }
 
 body{
@@ -19,6 +26,11 @@ body{
 
 header{
     margin: 2.5% 0;
+    font-size: 2.2vw;
+}
+
+header span{
+    color: red;
 }
 
 .content{
@@ -69,15 +81,16 @@ registration{
     grid-area: input;
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
+    padding-left: 1vw;
 }
 
 .input-infos input{
     width: 80%;
-    height: 5vh;
+    height: 8vh;
 }
 
 .input-infos h2{
+    font-size: 1.5vw;
     padding-top: 10px;
 }
 
@@ -93,13 +106,13 @@ registration{
 
 .promotion h2{
     font-size: 2vw;
-    padding-top: 25px;
+    padding-top: 1vw;
     padding-bottom: 20px;
 }
 
 .promotion input{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2vw;
+    height: 2vw;
 }
 
 #promocao-nao{
@@ -108,8 +121,8 @@ registration{
 }
 
 #form-promo span{
-    margin-left: 10px;
-    font-size: 1.6rem;
+    margin-left: 1vw;
+    font-size: 1.6vw;
 }
 
 /*BOTÃO DE SALVAR AS INFORMAÇÕES*/
@@ -123,9 +136,10 @@ registration{
 }
 
 #button-save{
+    border: 0;
     cursor: pointer;
-    width: 15rem;
-    height: 2.5rem;
+    width: 15vw;
+    height: 3vw;
     background-color: #F54749;
     border-radius: 15px;
     color:white;
@@ -163,14 +177,24 @@ products{
     box-shadow: 1px 1px 1px rgb(66, 66, 66);
 }
 
-.product img{
-    margin-top: -10px;
+.box-product{
+    display: grid;
+    grid-template-areas: "img" "price" "price" "button";
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#info-product{
+.product img{
+
+    grid-area: img;
+}
+
+.product p{
     display: flex;
     font-size: 1rem;
     align-items: center;
+    grid-area: price;
 }
 
 .button-remove{
@@ -179,13 +203,25 @@ products{
     margin-left: 30px;
 }
 
-#remove-button{
+.button-remove button{
+    grid-area: button;
     cursor: pointer;
     color: white;
     background-color: #F54749;
     border-radius: 15px;
     width: 100px;
     height: 2.5rem;
+    border: 0;
+}
+
+#button-save:hover {
+    transition: background 0.5s;
+    background-color: #F8B195;
+}
+
+.button-remove button:hover{
+    transition: background 0.5s;
+    background-color: #F8B195;
 }
 
 
