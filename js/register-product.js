@@ -1,8 +1,27 @@
 export let allProducts = []; //um array com todos os produtos registrados, usarei para criar paginação
 
-export function registerProduct(name, price){
+let saveButton = document.querySelector('#button-save')
+
+export function showWaring(){
+    let waringNoProduct = document.createElement('h4');
+    waringNoProduct.textContent = 'Nenhum produto cadastrado'
+    
+    let divProduct = document.querySelector('.product-list');
+    divProduct.appendChild(waringNoProduct);
+    
+}
+
+export function removeWaring(){
+    let waringNoProduct = document.querySelector('h4');
+    
+    let divProduct = document.querySelector('.product-list');
+    divProduct.removeChild(waringNoProduct);
+}
+
+
+export function registerProduct(name, price, waringNoProduct) {
     let divProduct = document.querySelector('.product-list')
-    allProducts.push(divProduct)
+    // allProducts.push(divProduct)
 
     //Criando a classe e o ID do produto
     let product = document.createElement('ul')
