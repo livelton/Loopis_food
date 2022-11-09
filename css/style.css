@@ -57,7 +57,7 @@ registration{
     "title"
     "input"
     "input"
-    "promotion"
+    "sale"
     "save";
 }
 
@@ -99,21 +99,21 @@ registration{
 
 /*INFOS PROMOÇÃO*/
 
-.promotion{
+.sale{
     height: 25%;
-    grid-area: promotion;
+    grid-area: sale;
     display: flex;
     flex-direction: column;
     padding-left: 10px;
 }
 
-.promotion h2{
+.sale h2{
     font-size: 2vw;
     padding-top: 1vw;
     padding-bottom: 20px;
 }
 
-.promotion input{
+.sale input{
     width: 2vw;
     height: 2vw;
 }
@@ -170,7 +170,7 @@ products{
     
 }
 
-.product{
+#product{
     margin-top: 10px;
     background-color: #F8B195;
     border-radius: 15px;
@@ -189,14 +189,13 @@ products{
     align-items: center;
 }
 
-.product img{
+#product img{
     grid-area: img;
 }
 
-.product p{
+#product p{
     font-weight: bold;
     color: black;
-    display: flex;
     font-size: 1rem;
     grid-area: price;
 }
@@ -227,8 +226,3 @@ products{
     transition: background 0.5s;
     background-color: #ad7762;
 }
-
-
-
-
-
