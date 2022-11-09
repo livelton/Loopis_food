@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loopis Food</title>
-    <!-- <script defer src="index.js"></script> -->
+    <script defer src="/js/index.js" type="module"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -22,17 +22,17 @@
                 </div>
                 <div class="input-infos">
                     <h2>Nome do prato</h2>
-                    <input type="text" id="nome-prato" placeholder="Digite o nome do prato">
+                    <input type="text" id="name-dish" placeholder="Digite o nome do prato">
 
                     <h2>Preço</h2>
-                    <input type="number" id="preco-prato" placeholder="R$10,70">
+                    <input type="number" id="price-dish" placeholder="R$10,70">
 
                 </div>
-                <div class="promotion">
+                <div class="sale">
                     <h2>Promoção</h2>
                     <form id="form-promo">
-                        <input type="radio" name="promocao" id="promocao-sim"><span>Sim</span>
-                        <input type="radio" name="promocao" id="promocao-nao"><span>Não</span>
+                        <input type="radio" name="sale-dish" id="sale-yes"><span>Sim</span>
+                        <input type="radio" name="sale-dish" id="sale-no"><span>Não</span>
                     </form>
                 </div>
                 <div class="save-button">
@@ -47,12 +47,17 @@
                 </div>
 
                 <div class="product-list">
-                    <ul class="product box-product">
+                    <h4>Nenhum produto cadastrado</h4>
+                    <ul class="box-product" id="product">
                         <img src="/imgs/hamburguer.png" alt="hamburguer" width="100" height="100">
+                        <div class="infos-content">
                             <p>Smash Burguer
-                                <br>
+                            </p>
+                            <p>
                                 Preço: R$10,00
                             </p>
+                        </div>    
+                   
                             
                         <div class="button-remove">
                             <button>Remover</button>
