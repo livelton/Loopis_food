@@ -10,13 +10,29 @@
 
 }
 
-body{
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: rgb(185, 185, 185);
+    border-radius: 20px;
+    
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #F54749;
+    border-radius: 20px;
+    border: 3px solid #F8B195;
+}
+
+body {
     background-image: url(/imgs/background_food_loopis.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.container{
+.container {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -24,17 +40,17 @@ body{
     flex-direction: column;
 }
 
-header{
+header {
     font-weight: bold;
     margin: 2.5% 0;
     font-size: 2.2vw;
 }
 
-header span{
+header span {
     color: red;
 }
 
-.content{
+.content {
     width: 65%;
     display: flex;
     justify-content: space-between;
@@ -42,8 +58,8 @@ header span{
     gap: 50px;
 }
 
-.box{
-    color:#F8B195;
+.box {
+    color: #F8B195;
     width: 100%;
     height: 80vh;
     border-radius: 15px;
@@ -51,34 +67,34 @@ header span{
     background-color: white;
 }
 
-registration{
+registration {
     display: grid;
     grid-template-areas:
-    "title"
-    "input"
-    "input"
-    "sale"
-    "save";
+        "title"
+        "input"
+        "input"
+        "sale"
+        "save";
 }
 
 /*TITULO DA PÁGINA*/
-.title{
+.title {
     font-size: 2vw;
     height: 25%;
     grid-area: title;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.title-menu{
+.title-menu {
     margin-top: -30px;
-    
+
 }
 
 /*INFOS DE CADASTRO*/
-.input-infos{
+.input-infos {
     height: 35%;
     grid-area: input;
     display: flex;
@@ -86,20 +102,20 @@ registration{
     padding-left: 1vw;
 }
 
-.input-infos input{
+.input-infos input {
     font-size: 20px;
     width: 80%;
     height: 8vh;
 }
 
-.input-infos h2{
+.input-infos h2 {
     font-size: 1.5vw;
     padding-top: 10px;
 }
 
 /*INFOS PROMOÇÃO*/
 
-.sale{
+.sale {
     height: 25%;
     grid-area: sale;
     display: flex;
@@ -107,23 +123,23 @@ registration{
     padding-left: 10px;
 }
 
-.sale h2{
+.sale h2 {
     font-size: 2vw;
     padding-top: 1vw;
     padding-bottom: 20px;
 }
 
-.sale input{
+.sale input {
     width: 2vw;
     height: 2vw;
 }
 
-#sale-no{
+#sale-no {
     margin-left: 100px;
 
 }
 
-#form-sale span{
+#form-sale span {
     margin-left: 1vw;
     font-size: 2vw;
     font-weight: bold;
@@ -131,7 +147,7 @@ registration{
 
 /*BOTÃO DE SALVAR AS INFORMAÇÕES*/
 
-.save-button{
+.save-button {
     height: 15%;
     grid-area: save;
     display: flex;
@@ -139,42 +155,43 @@ registration{
     justify-content: center;
 }
 
-#button-save{
+#button-save {
     border: 0;
     cursor: pointer;
     width: 15vw;
     height: 3vw;
     background-color: #F54749;
     border-radius: 15px;
-    color:white;
+    color: white;
     font-size: 1rem;
 }
 
 /*PÁGINA DE PRODUTOS*/
 
-products{
+products {
     display: grid;
-    grid-template-areas: 
-    "title"
-    "product"
-    "product"
-    "product"
-    "product";
+    grid-template-areas:
+        "title"
+        "product"
+        "product"
+        "product"
+        "product";
 }
 
-.product-list{
+.product-list {
     grid-area: product;
-    height: 12,5%;
+    height: 12, 5%;
     display: flex;
     flex-direction: column;
-    
+    overflow-y: auto;
+    height: 55vh;
 }
 
-.product-list h4{
+.product-list h4 {
     text-align: center;
 }
 
-#product{
+#product {
     margin-top: 10px;
     background-color: #F8B195;
     border-radius: 15px;
@@ -185,7 +202,7 @@ products{
     box-shadow: 1px 1px 1px rgb(66, 66, 66);
 }
 
-.box-product{
+.box-product {
     display: grid;
     grid-template-areas: "img" "price" "price" "button";
     display: flex;
@@ -193,24 +210,24 @@ products{
     align-items: center;
 }
 
-#product img{
+#product img {
     grid-area: img;
 }
 
-#product p{
+#product p {
     font-weight: bold;
     color: black;
     font-size: 1rem;
     grid-area: price;
 }
 
-.button-remove{
+.button-remove {
     display: flex;
     align-items: center;
     margin-left: 30px;
 }
 
-.button-remove button{
+.button-remove button {
     grid-area: button;
     cursor: pointer;
     color: white;
@@ -226,7 +243,7 @@ products{
     background-color: #F8B195;
 }
 
-.button-remove button:hover{
+.button-remove button:hover {
     transition: background 0.5s;
     background-color: #ad7762;
 }
