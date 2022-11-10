@@ -1,7 +1,8 @@
+import * as sale from './check-sale.js'
+
 export let allProducts = []; //um array com todos os produtos registrados, usarei para criar paginação
 
-let saveButton = document.querySelector('#button-save')
-
+//FUNÇÃO PARA MOSTRAR O AVISO DE NÃO PRODUTO CADASTRADO
 export function showWaring(){
     let waringNoProduct = document.createElement('h4');
     waringNoProduct.textContent = 'Nenhum produto cadastrado'
@@ -11,6 +12,7 @@ export function showWaring(){
     
 }
 
+//FUNÇÃO PARA REMOVER AVISO DE NÃO PRODUTO CADASTRADO
 export function removeWaring(){
     let waringNoProduct = document.querySelector('h4');
     
@@ -19,7 +21,9 @@ export function removeWaring(){
 }
 
 
-export function registerProduct(name, price, waringNoProduct) {
+
+
+export function registerProduct(name, price) {
     let divProduct = document.querySelector('.product-list')
     // allProducts.push(divProduct)
 
@@ -29,6 +33,15 @@ export function registerProduct(name, price, waringNoProduct) {
     product.setAttribute('id', 'product')
     console.log(product)
     divProduct.appendChild(product)
+
+    let saleYes = document.querySelector('#sale-yes');
+    if(saleYes.checked === true){
+        //aqui definirá as propriedades do produto
+        sale.checkSale(product)
+
+        //aqui definirá o desconto do produto
+        price = price - (price * 20/100);
+    }
 
     //Adicionando imagem ao produto
     let img = document.createElement('img')
