@@ -24,15 +24,21 @@ export function removeWaring(){
 export function registerProduct(name, price) {
     let divProduct = document.querySelector('.product-list')
     // allProducts.push(divProduct)
-
+    
+    let saleYes = document.querySelector('#sale-yes');
+    
     //Criando a classe e o ID do produto
     let product = document.createElement('ul')
     product.setAttribute('class', 'box-product')
     product.setAttribute('id', 'product')
-    divProduct.appendChild(product)
-
-    let saleYes = document.querySelector('#sale-yes');
-    if(saleYes.checked === true){
+    if(saleYes.checked){
+        let firstProduct = divProduct.querySelector("ul");
+        divProduct.insertBefore(product, firstProduct)
+    } else{
+        divProduct.appendChild(product)
+    }
+    
+    if(saleYes.checked){
         //aqui definirá as propriedades do produto
         sale.checkSale(product)
 
@@ -67,7 +73,11 @@ export function registerProduct(name, price) {
     divRemove.appendChild(buttonRemove)
     buttonRemove.textContent = 'Remover'
 
-    allProducts.push(product);
+    if(saleYes.checked){
+        allProducts = [product, ...allProducts]
+    } else{
+        allProducts.push(product);
+    }
 
     buttonRemove.addEventListener('click', () => {
         remove.removeProduct(infosContentDiv)
