@@ -1,4 +1,5 @@
 import * as sale from './check-sale.js'
+import * as remove from './remove-product.js'
 
 export let allProducts = []; //um array com todos os produtos registrados, usarei para criar paginação
 
@@ -20,9 +21,6 @@ export function removeWaring(){
     divProduct.removeChild(waringNoProduct);
 }
 
-
-
-
 export function registerProduct(name, price) {
     let divProduct = document.querySelector('.product-list')
     // allProducts.push(divProduct)
@@ -31,7 +29,6 @@ export function registerProduct(name, price) {
     let product = document.createElement('ul')
     product.setAttribute('class', 'box-product')
     product.setAttribute('id', 'product')
-    console.log(product)
     divProduct.appendChild(product)
 
     let saleYes = document.querySelector('#sale-yes');
@@ -61,7 +58,6 @@ export function registerProduct(name, price) {
     productPrice.textContent = `Preço: R$${price}`;
     infosContentDiv.appendChild(productName)
     infosContentDiv.appendChild(productPrice)
-    console.log(infosContentDiv)
 
     //Adicionando botão 
     let divRemove = document.createElement('div')
@@ -70,4 +66,10 @@ export function registerProduct(name, price) {
     let buttonRemove = document.createElement('button')
     divRemove.appendChild(buttonRemove)
     buttonRemove.textContent = 'Remover'
+
+    allProducts.push(product);
+
+    buttonRemove.addEventListener('click', () => {
+        remove.removeProduct(infosContentDiv)
+    })
 }
