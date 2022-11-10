@@ -179,6 +179,7 @@ products {
 }
 
 .product-list {
+    cursor: pointer;
     grid-area: product;
     height: 12, 5%;
     display: flex;
