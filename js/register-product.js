@@ -1,5 +1,6 @@
 import * as sale from './check-sale.js'
 import * as remove from './remove-product.js'
+import * as storage from './storage-item.js'
 
 export let allProducts = []; //um array com todos os produtos registrados, usarei para criar paginação
 
@@ -82,4 +83,6 @@ export function registerProduct(name, price) {
     buttonRemove.addEventListener('click', () => {
         remove.removeProduct(infosContentDiv)
     })
+
+    storage.localStorageItem(divProduct);
 }
