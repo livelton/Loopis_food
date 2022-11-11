@@ -1,14 +1,27 @@
-let savedItems = [];
+import * as productsFunctions from './register-product.js';
 
-export function localStorageItem(product) {
-   savedItems.push(product)
-   localStorage.setItem('products', JSON.stringify(savedItems))
-   JSON.parse(localStorage.products)
+let allProducts = []
+let registeredItems = [];
+
+export function localStorageItem(name, price) {
+   let obj = {
+      name: name,
+      price: price
+   }
+   allProducts.push(obj)
+   localStorage.products = JSON.stringify(allProducts);
 }
 
-export function showStorageItem(){
-   localStorage.getItem('products');
-   let storageItems = JSON.parse(localStorage.products)
+export function showStorageItem() {
+   if (localStorage.products) {
+      registeredItems = JSON.parse(localStorage.getItem('products'));
 
-   
+      registeredItems.forEach((product) => {
+         productsFunctions.registerProduct(product.name, product.price)
+      });
+   } else {
+      productsFunctions.showWaring();
+   }
+
+
 }
