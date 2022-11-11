@@ -2,7 +2,6 @@ import * as sale from './check-sale.js'
 import * as remove from './remove-product.js'
 import * as storage from './storage-item.js'
 
-export let allProducts = []; //um array com todos os produtos registrados, usarei para criar paginação
 
 //FUNÇÃO PARA MOSTRAR O AVISO DE NÃO PRODUTO CADASTRADO
 export function showWaring(){
@@ -24,7 +23,6 @@ export function removeWaring(){
 
 export function registerProduct(name, price) {
     let divProduct = document.querySelector('.product-list')
-    // allProducts.push(divProduct)
     
     let saleYes = document.querySelector('#sale-yes');
     
@@ -74,15 +72,9 @@ export function registerProduct(name, price) {
     divRemove.appendChild(buttonRemove)
     buttonRemove.textContent = 'Remover'
 
-    if(saleYes.checked){
-        allProducts = [product, ...allProducts]
-    } else{
-        allProducts.push(product);
-    }
-
     buttonRemove.addEventListener('click', () => {
         remove.removeProduct(infosContentDiv)
     })
 
-    storage.localStorageItem(divProduct);
+    storage.localStorageItem(name, price);
 }
