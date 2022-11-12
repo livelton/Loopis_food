@@ -1,27 +1,35 @@
-import * as productsFunctions from './register-product.js';
+if (localStorage.products === undefined) {
+   localStorage.products = JSON.stringify([]);
+}else{
+   localStorage.products = localStorage.getItem('products')
+}
 
-let allProducts = []
-let registeredItems = [];
-
-export function localStorageItem(name, price) {
+export function localStorageItem(name, price, sale) {
+   let allProducts = JSON.parse(localStorage.products)
    let obj = {
       name: name,
-      price: price
+      price: price,
+      sale: sale
    }
-   allProducts.push(obj)
+
+   if (sale) {
+      //aqui definirá o desconto do produto
+      obj.price = obj.price - (obj.price * 20 / 100);
+      allProducts.unshift(obj)
+   } else {
+      allProducts.push(obj)
+   }
+
    localStorage.products = JSON.stringify(allProducts);
 }
 
-export function showStorageItem() {
-   if (localStorage.products) {
-      registeredItems = JSON.parse(localStorage.getItem('products'));
+export function recoverLocalStorage() {
+   return JSON.parse(localStorage.products)
+}
 
-      registeredItems.forEach((product) => {
-         productsFunctions.registerProduct(product.name, product.price)
-      });
-   } else {
-      productsFunctions.showWaring();
-   }
-
-
+export function removeProduct(index){
+   let allProducts = JSON.parse(localStorage.products);
+   
+   allProducts.splice(index, 1);
+   localStorage.products = JSON.stringify(allProducts);
 }
