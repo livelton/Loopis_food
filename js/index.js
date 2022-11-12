@@ -13,7 +13,7 @@ saveButton.addEventListener('click', () => {
 
     } else {
         //Serão passados os valores digitados para o usuário para a função de registrar produto
-        productsFunctions.registerProduct(dishName.value, dishPrice.value);
+        productsFunctions.registerProduct();
     }
 
 
