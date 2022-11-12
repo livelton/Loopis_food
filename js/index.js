@@ -4,6 +4,8 @@ window.addEventListener('load', productsFunctions.updateProduct());
 productsFunctions.comparateWaring();
 
 let saveButton = document.querySelector('#button-save');
+let dishName = document.querySelector('#name-dish');
+let dishPrice = document.querySelector('#price-dish');
 
 saveButton.addEventListener('click', () => {
 
@@ -13,7 +15,7 @@ saveButton.addEventListener('click', () => {
 
     } else {
         //Serão passados os valores digitados para o usuário para a função de registrar produto
-        productsFunctions.registerProduct();
+        productsFunctions.registerProduct(dishName.value, dishPrice.value);
     }
 
 
