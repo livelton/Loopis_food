@@ -205,7 +205,7 @@ products {
 }
 
 .product-list {
-    cursor: pointer;
+    
     grid-area: product;
     height: 12, 5%;
     display: flex;
@@ -216,10 +216,12 @@ products {
 
 .product-list h4 {
     text-align: center;
+    cursor: pointer;
 }
 
 #product,
 #productSale {
+    cursor: pointer;
     margin-top: 10px;
     border-radius: 15px;
     height: 12vh;
