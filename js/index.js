@@ -18,6 +18,9 @@ saveButton.addEventListener('click', () => {
         productsFunctions.registerProduct(dishName.value, dishPrice.value);
     }
 
+    dishName.value = ''
+    dishPrice.value = ''
+
 
 
 });

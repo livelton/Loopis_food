@@ -54,10 +54,14 @@ export function updateProduct() {
 
         console.log()
         if (element.sale) {
-            product.style.backgroundColor = "#E4B056";
+            product.setAttribute('id', 'productSale');
             //aqui definirá as propriedades do produto
             //sale.checkSale(product)
         }
+
+        //Adicionando uma div para imagem
+        let divImg = document.createElement('div')
+        divImg.setAttribute('class', 'img-product')
 
         //Adicionando imagem ao produto
         let img = document.createElement('img')
@@ -92,7 +96,9 @@ export function updateProduct() {
         divRemove.appendChild(buttonRemove)
         infosContentDiv.appendChild(productName)
         infosContentDiv.appendChild(productPrice)
-        product.appendChild(img);
+        divImg.appendChild(img)
+
+        product.appendChild(divImg);
         product.appendChild(infosContentDiv)
         product.appendChild(divRemove)
 
