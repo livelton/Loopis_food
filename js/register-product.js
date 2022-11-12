@@ -54,7 +54,7 @@ export function updateProduct() {
 
         console.log()
         if (element.sale) {
-            product.style.backgroundColor = "#E4B056";
+            product.setAttribute('id', 'productSale');
             //aqui definirá as propriedades do produto
             //sale.checkSale(product)
         }
