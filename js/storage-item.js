@@ -14,7 +14,7 @@ export function localStorageItem(name, price, sale) {
 
    if (sale) {
       //aqui definirá o desconto do produto
-      obj.price = obj.price - (obj.price * 20 / 100);
+      obj.price = (obj.price - (obj.price * 20 / 100)).toFixed(2);
       allProducts.unshift(obj)
    } else {
       allProducts.push(obj)
