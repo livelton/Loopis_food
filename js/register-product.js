@@ -6,6 +6,7 @@ export function comparateWaring() {
     const waring = document.querySelector('h4')
     const existsWaring = document.body.contains(waring)
 
+
     if (toWaring.length === 0){
         showWaring()
     }
@@ -33,18 +34,12 @@ function removeWaring() {
     divProduct.removeChild(waringNoProduct);
 }
 
-
-
-let dishName = document.querySelector('#name-dish');
-let dishPrice = document.querySelector('#price-dish');
-
-export function registerProduct() {
+export function registerProduct(name, price) {
     let saleYes = document.querySelector('#sale-yes');
-    storage.localStorageItem(dishName.value, dishPrice.value, saleYes.checked);
+    storage.localStorageItem(name, price, saleYes.checked);
 
     updateProduct();
     comparateWaring();
-
 }
 
 export function updateProduct() {
