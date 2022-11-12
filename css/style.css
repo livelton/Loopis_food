@@ -17,7 +17,7 @@
 *::-webkit-scrollbar-track {
     background-color: rgb(185, 185, 185);
     border-radius: 20px;
-    
+
 }
 
 *::-webkit-scrollbar-thumb {
@@ -129,20 +129,46 @@ registration {
     padding-bottom: 20px;
 }
 
+/*BOTÕES DE SELEÇÃO DE PROMO*/
+.sale-select {
+    display: flex;
+    gap: 70px
+}
+
 .sale input {
-    width: 2vw;
-    height: 2vw;
+    display: none;
 }
 
-#sale-no {
-    margin-left: 100px;
-
-}
-
-#form-sale span {
-    margin-left: 1vw;
+.label-promo {
+    align-items: center;
+    letter-spacing: 0.4px;
     font-size: 2vw;
+    color: #F8B195;
+    cursor: pointer;
+    display: flex;
     font-weight: bold;
+
+}
+
+.label-promo::before {
+    content: '';
+    display: block;
+    height: 3vw;
+    width: 3vw;
+    box-sizing: border-box;
+    border: 2px solid rgb(87, 87, 87);
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: white;
+    background: url('https://api.iconify.design/akar-icons/check.svg?color=white');
+    background-size: 2vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.3s ease-in-out;
+}
+
+.sale input:checked+.label-promo::before {
+    background-color: #F8B195;
 }
 
 /*BOTÃO DE SALVAR AS INFORMAÇÕES*/
@@ -163,7 +189,7 @@ registration {
     background-color: #F54749;
     border-radius: 15px;
     color: white;
-    font-size: 1rem;
+    font-size: 1vw;
 }
 
 /*PÁGINA DE PRODUTOS*/
@@ -192,15 +218,33 @@ products {
     text-align: center;
 }
 
-#product {
+#product,
+#productSale {
     margin-top: 10px;
-    background-color: #F8B195;
     border-radius: 15px;
     height: 12vh;
     display: flex;
     width: 28vw;
     margin-left: 4%;
     box-shadow: 1px 1px 1px rgb(66, 66, 66);
+}
+
+#product{
+    background-color: #F8B195;
+}
+
+#product:hover{
+    transition: background 0.5s;
+    background-color: #f79a75;
+}
+
+#productSale{
+    background-color: #E4B056;
+}
+
+#productSale:hover{
+    transition: background 0.5s;
+    background-color: #f0b858;
 }
 
 .box-product {
@@ -211,7 +255,7 @@ products {
     align-items: center;
 }
 
-.img-product{
+.img-product {
     grid-area: img;
     height: 100%;
     width: 30%;
@@ -220,12 +264,12 @@ products {
     justify-content: center;
 }
 
-.img-product img{
+.img-product img {
     width: 6.5vw;
     height: 6.5vw;
 }
 
-.infos-content{
+.infos-content {
     grid-area: info;
     height: 100%;
     width: 40%;
@@ -235,11 +279,12 @@ products {
     align-items: flex-start;
 }
 
-#product p {
+#product p,
+#productSale p {
     font-weight: bold;
     color: black;
     font-size: 1vw;
-    
+
 }
 
 .button-remove {
