@@ -1,8 +1,23 @@
 import * as storage from './storage-item.js'
 
+export function comparateWaring() {
+    let toWaring = storage.recoverLocalStorage();
+
+    const waring = document.querySelector('h4')
+    const existsWaring = document.body.contains(waring)
+
+
+    if (toWaring.length === 0){
+        showWaring()
+    }
+    else if (existsWaring == true) {
+        removeWaring()
+        console.log('remove')
+    }
+}
 
 //FUNÇÃO PARA MOSTRAR O AVISO DE NÃO PRODUTO CADASTRADO
-export function showWaring() {
+function showWaring() {
     let waringNoProduct = document.createElement('h4');
     waringNoProduct.textContent = 'Nenhum produto cadastrado'
 
@@ -12,22 +27,19 @@ export function showWaring() {
 }
 
 //FUNÇÃO PARA REMOVER AVISO DE NÃO PRODUTO CADASTRADO
-export function removeWaring() {
+function removeWaring() {
     let waringNoProduct = document.querySelector('h4');
 
     let divProduct = document.querySelector('.product-list');
     divProduct.removeChild(waringNoProduct);
 }
 
-let dishName = document.querySelector('#name-dish');
-let dishPrice = document.querySelector('#price-dish');
-
-export function registerProduct() {
+export function registerProduct(name, price) {
     let saleYes = document.querySelector('#sale-yes');
-    storage.localStorageItem(dishName.value, dishPrice.value, saleYes.checked);
+    storage.localStorageItem(name, price, saleYes.checked);
 
     updateProduct();
-
+    comparateWaring();
 }
 
 export function updateProduct() {
@@ -74,6 +86,7 @@ export function updateProduct() {
         buttonRemove.addEventListener('click', () => {
             storage.removeProduct(index)
             updateProduct();
+            comparateWaring();
         })
 
         divRemove.appendChild(buttonRemove)
