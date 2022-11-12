@@ -59,6 +59,10 @@ export function updateProduct() {
             //sale.checkSale(product)
         }
 
+        //Adicionando uma div para imagem
+        let divImg = document.createElement('div')
+        divImg.setAttribute('class', 'img-product')
+
         //Adicionando imagem ao produto
         let img = document.createElement('img')
         img.setAttribute('src', '/imgs/hamburguer.png')
@@ -92,7 +96,9 @@ export function updateProduct() {
         divRemove.appendChild(buttonRemove)
         infosContentDiv.appendChild(productName)
         infosContentDiv.appendChild(productPrice)
-        product.appendChild(img);
+        divImg.appendChild(img)
+
+        product.appendChild(divImg);
         product.appendChild(infosContentDiv)
         product.appendChild(divRemove)
 
