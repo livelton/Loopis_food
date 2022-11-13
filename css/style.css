@@ -27,7 +27,7 @@
 }
 
 body {
-    background-image: url(/imgs/background_food_loopis.png);
+    background-image: url(../imgs/background_food_loopis.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
