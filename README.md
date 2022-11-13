@@ -14,6 +14,4 @@ Fique a vontade para cadastrar quantos produtos quiser, assim que você cadastra
 
 E não se preocupe com as perdas de **_informações de produtos cadastrados_**, todas as informações ficarão salvas em seu computador, mesmo que você **desligue** ele ou **feche o programa**. Apenas **não apague a chave do localstorage** ou faça com que seu navegador limpe isso.
 
-
-
-
+![2022-11-13-11-35-43_Trim_1](https://user-images.githubusercontent.com/118118929/201528416-aaa629af-6df4-467f-bc11-3cb5c14924f4.gif)
